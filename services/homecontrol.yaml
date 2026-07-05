@@ -1,0 +1,13 @@
+services:
+  homecontrol:
+    image: ghcr.io/roy752/homecontrol:latest
+
+    container_name: homecontrol
+
+    ports:
+      - "11010:11010"
+    
+    restart: unless-stopped
+
+    environment:
+      - TZ=Asia/Seoul
