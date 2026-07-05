@@ -1,0 +1,21 @@
+name: Deploy Homelab
+
+on:
+    workflow_dispatch:
+    repository_dispatch:
+        types: [deploy]
+    
+jobs:
+    deploy:
+        runs-on: self-hosted
+
+        steps:
+          - name: Update Docker containers
+            shell: powershell
+            run: |
+              Set-Location C:\homelab
+
+              docker compose pull
+              docker compose up -d
+
+              docker image prune -f
