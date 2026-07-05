@@ -5,7 +5,7 @@ services:
     container_name: homecontrol
 
     ports:
-      - "11010:11010"
+      - "11010:8000"
     
     restart: unless-stopped
 
