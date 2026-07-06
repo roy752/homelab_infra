@@ -10,4 +10,4 @@ services:
     restart: unless-stopped
 
     environment:
-      - TZ: Asia/Seoul
+      TZ: Asia/Seoul
