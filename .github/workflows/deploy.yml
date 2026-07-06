@@ -10,12 +10,20 @@ jobs:
         runs-on: self-hosted
 
         steps:
+          - name: Checkout repository
+            shell: powershell
+            run: |
+              Set-Location C:\homelab
+
+              git fetch origin
+              git reset --hard origin/master
+
           - name: Update Docker containers
             shell: powershell
             run: |
               Set-Location C:\homelab
 
               docker compose pull
-              docker compose up -d
+              docker compose up -d --remove-orphans
 
               docker image prune -f

@@ -5,9 +5,9 @@ services:
     container_name: homecontrol
 
     ports:
-      - "11010:8000"
+      - "${HOMECONTROL_PORT}:8000"
     
     restart: unless-stopped
 
     environment:
-      - TZ=Asia/Seoul
+      - TZ: Asia/Seoul
