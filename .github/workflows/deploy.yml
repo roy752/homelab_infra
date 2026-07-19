@@ -29,6 +29,6 @@ jobs:
               Set-Location C:\homelab
 
               docker compose pull
-              docker compose up -d --remove-orphans
+              docker compose up -d --env-file .env --env-file ..\homelab_secret\.env.local --remove-orphans
 
               docker image prune -f

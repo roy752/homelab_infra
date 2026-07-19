@@ -19,6 +19,10 @@ services:
     extends:
       file: ./services/homecontrol.yaml
       service: homecontrol
+  couchdb:
+    extends:
+      file: ./services/couchdb.yaml
+      service: couchdb
 
 volumes:
 
